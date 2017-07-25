@@ -66,7 +66,6 @@ function(status, rowid)
 }
 ONGRIDLOADCOMPLETE;
 $dgProd->add_event("jqGridLoadComplete", $onGridLoadComplete);
-
 $dgProd->enable_edit('FORM');
 
 // Purchases detail grid
@@ -95,6 +94,8 @@ $dgProd->display();
 .number-columns{
 	font-weight: 700 !important;
 }
+</style>
+
 
 <?php
 include_once('inc/footer.php');

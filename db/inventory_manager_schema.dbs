@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="inventory_manager" id="Project_30b790f2" template="Default" database="MySql" >
+	<schema name="InventoryManager" catalogname="InventoryManager" >
+		<table name="orders" >
+			<column name="id" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" autoincrement="y" />
+			<column name="Title" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="First" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="Middle" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="Last" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="ProductId" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" />
+			<column name="NumberShipped" type="int" length="10" decimal="0" jt="4" />
+			<column name="OrderDate" type="date" length="10" decimal="0" jt="91" />
+			<index name="pk_orders" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="order_product_fk" unique="NORMAL" >
+				<column name="ProductId" />
+			</index>
+			<fk name="order_product_fk" to_schema="InventoryManager" to_table="products" >
+				<fk_column name="ProductId" pk="id" />
+			</fk>
+		</table>
+		<table name="products" >
+			<column name="id" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" autoincrement="y" />
+			<column name="ProductName" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="PartNumber" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="ProductLabel" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="StartingInventory" type="int" length="10" decimal="0" jt="4" />
+			<column name="InventoryReceived" type="int" length="10" decimal="0" jt="4" />
+			<column name="InventoryShipped" type="int" length="10" decimal="0" jt="4" />
+			<column name="InventoryOnHand" type="int" length="10" decimal="0" jt="4" />
+			<column name="MinimumRequired" type="int" length="10" decimal="0" jt="4" />
+			<index name="pk_products" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="purchases" >
+			<column name="id" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" autoincrement="y" />
+			<column name="SupplierId" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" />
+			<column name="ProductId" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" />
+			<column name="NumberReceived" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PurchaseDate" type="date" length="10" decimal="0" jt="91" mandatory="y" />
+			<index name="pk_purchases" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="purchase_product_fk" unique="NORMAL" >
+				<column name="ProductId" />
+			</index>
+			<index name="purchase_supplier_fk" unique="NORMAL" >
+				<column name="SupplierId" />
+			</index>
+			<fk name="purchase_product_fk" to_schema="InventoryManager" to_table="products" >
+				<fk_column name="ProductId" pk="id" />
+			</fk>
+			<fk name="purchase_supplier_fk" to_schema="InventoryManager" to_table="suppliers" >
+				<fk_column name="SupplierId" pk="id" />
+			</fk>
+		</table>
+		<table name="suppliers" >
+			<column name="id" type="int" length="10" decimal="0" jt="4" mandatory="y" unsigned="y" autoincrement="y" />
+			<column name="supplier" type="varchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;&#039;</defo>
+			</column>
+			<index name="pk_suppliers" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+	</schema>
+	<connector name="inventory_manager" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-java-5.1.40-bin.jar" driver_desc="Standard" host="localhost" port="3306" instance="InventoryManager" user="root" />
+	<layout name="Default Layout" id="Layout_3605ffbb" joined_routing="y" show_relation="columns" >
+		<entity schema="InventoryManager" name="purchases" color="bfd4f5" x="288" y="48" />
+		<entity schema="InventoryManager" name="orders" color="bfd4f5" x="288" y="208" />
+		<entity schema="InventoryManager" name="products" color="bfd4f5" x="48" y="112" />
+		<entity schema="InventoryManager" name="suppliers" color="bfd4f5" x="496" y="64" />
+	</layout>
+	<layout name="Sample Layout with Groups" id="Layout_123a3120" joined_routing="y" show_relation="columns" >
+		<entity schema="InventoryManager" name="orders" color="bfd4f5" x="256" y="448" />
+		<entity schema="InventoryManager" name="products" color="bfd4f5" x="48" y="192" />
+		<entity schema="InventoryManager" name="purchases" color="bfd4f5" x="256" y="192" />
+		<entity schema="InventoryManager" name="suppliers" color="bfd4f5" x="48" y="448" />
+		<callout x="48" y="80" pointer="NO" >
+			<comment><![CDATA[You may create multiple layouts with the same or different tables.
+Layouts will be saved to project file. 
+Double-click any column, foreign key or table headers to edit.]]></comment>
+		</callout>
+		<group name="products" color="ecf0f7" >
+			<entity schema="InventoryManager" name="products" />
+			<entity schema="InventoryManager" name="purchases" />
+			<entity schema="InventoryManager" name="orders" />
+			<entity schema="InventoryManager" name="suppliers" />
+		</group>
+	</layout>
+	<layout name="Sample Layout with Relational Data Browse" id="Layout_1f79406" joined_routing="y" show_relation="columns" >
+		<entity schema="InventoryManager" name="orders" color="bfd4f5" x="256" y="416" />
+		<entity schema="InventoryManager" name="products" color="bfd4f5" x="48" y="160" />
+		<entity schema="InventoryManager" name="purchases" color="bfd4f5" x="256" y="160" />
+		<entity schema="InventoryManager" name="suppliers" color="bfd4f5" x="48" y="416" />
+		<callout x="48" y="48" pointer="NO" >
+			<comment><![CDATA[Use the Relational Data Browse for exploring data from multiple tables at a time.
+Tables should be bind by foreign keys - if they are not you can create VIRTUAL foreign keys in the layout. 
+Virtual foreign keys will be saved to project file.
+ 
+Descend into children tables by pressing the foreign key arrow icon near title.
+Right-click column headers in browse tables to set filters.]]></comment>
+		</callout>
+		<browser id="Browse_1d1f6611" name="Sample Relational Data Browse" confirm_updates="y" >
+			<browse_table schema="InventoryManager" entity="products" x="10" y="10" width="400" height="300" >
+				<browse_table schema="InventoryManager" entity="orders" fk="order_product_fk" x="420" y="10" width="400" height="300" />
+			</browse_table>
+		</browser>
+	</layout>
+</project>

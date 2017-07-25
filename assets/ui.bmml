@@ -1,0 +1,56 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="960" measuredH="723" mockupW="925" mockupH="665">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="35" y="58" w="925" h="665" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>My%20Inventory%20Management%0Ahttp%3A//myinventorymanagementapp</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="77" y="265" w="854" h="152" measuredW="671" measuredH="187" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28job%20title%29%20%5E%2C%20PartNumber%2C%20Label%2C%20Starting%20Inventory%2C%20Inventory%20Received%2C%20Inventory%20On%20hand%0ADell%20XP%202000%20%26%20CEO%2C%20Dell%2C%20Peldi%2C%201000%2C%2011%2C%2033%2C%2044%0AHP%20111M%2C%20HP%2C%20%2C1000%2C%201%2C%203%2C%204%0AApple%20Server%20101%2C%20Apple%2C%20Patata%2C%20500%2C%2023%2C%20233%2C%200%0AiRock%20M1%20%3A%29%2C%20Unisys%2C%20300%2C%2022%2C%2099%2C%2021%0AES7000%2C%206%2C%20Lenovo%2C%20500%2C%2044%2C%2022%2C%2019%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="77" y="241" w="-1" h="-1" measuredW="69" measuredH="24" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Products</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::MenuBar" x="77" y="197" w="855" h="29" measuredW="456" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Current%20Inventory%2C%20Incoming%20Purchase%2C%20Outgoing%20Orders%2C%20Reports</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Title" x="77" y="139" w="-1" h="-1" measuredW="408" measuredH="43" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>My%20Inventory%20Manager</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::DataGrid" x="77" y="452" w="854" h="97" measuredW="671" measuredH="187" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28job%20title%29%20%5E%2C%20PartNumber%2C%20Label%2C%20Starting%20Inventory%2C%20Inventory%20Received%2C%20Inventory%20On%20hand%0ADell%20XP%202000%20%26%20CEO%2C%20Dell%2C%20Peldi%2C%201000%2C%2011%2C%2033%2C%2044%0AHP%20111M%2C%20HP%2C%20%2C1000%2C%201%2C%203%2C%204%0AApple%20Server%20101%2C%20Apple%2C%20Patata%2C%20500%2C%2023%2C%20233%2C%200%0AiRock%20M1%20%3A%29%2C%20Unisys%2C%20300%2C%2022%2C%2099%2C%2021%0AES7000%2C%206%2C%20Lenovo%2C%20500%2C%2044%2C%2022%2C%2019%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="77" y="585" w="854" h="86" measuredW="671" measuredH="187" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28job%20title%29%20%5E%2C%20PartNumber%2C%20Label%2C%20Starting%20Inventory%2C%20Inventory%20Received%2C%20Inventory%20On%20hand%0ADell%20XP%202000%20%26%20CEO%2C%20Dell%2C%20Peldi%2C%201000%2C%2011%2C%2033%2C%2044%0AHP%20111M%2C%20HP%2C%20%2C1000%2C%201%2C%203%2C%204%0AApple%20Server%20101%2C%20Apple%2C%20Patata%2C%20500%2C%2023%2C%20233%2C%200%0AiRock%20M1%20%3A%29%2C%20Unisys%2C%20300%2C%2022%2C%2099%2C%2021%0AES7000%2C%206%2C%20Lenovo%2C%20500%2C%2044%2C%2022%2C%2019%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="77" y="561" w="-1" h="-1" measuredW="126" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Outgoing%20Orders</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="77" y="428" w="-1" h="-1" measuredW="144" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Incoming%20Purchase</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
