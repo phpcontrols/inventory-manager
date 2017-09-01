@@ -14,7 +14,7 @@ include_once('inc/menu.php');
 ?>
 
 <br />
-<span id="label_info"></span>
+<div id="label_info"></div>
 
 
 <?php
@@ -49,7 +49,7 @@ $pc->draw(660,400);
 <?php
 $dgProd = new C_DataGrid('SELECT id, ProductLabel, InventoryReceived FROM products', 'id', 'products');
 $dgProd->set_col_hidden('id', false);
-$dgProd->set_dimension('auto', '200px')->set_pagesize(100);
+$dgProd->set_dimension('auto', 'auto')->set_pagesize(100);
 $onGridLoadComplete = <<<ONGRIDLOADCOMPLETE
 function(status, rowid)
 {
@@ -58,9 +58,6 @@ function(status, rowid)
 
 	d1 = $('#products').jqGrid('getCol', 'ProductLabel', false);
 	d2 = $('#products').jqGrid('getCol', 'InventoryReceived', false);
-	d3 = $('#products').jqGrid('getCol', 'InventoryShipped', false);
-	d4 = $('#products').jqGrid('getCol', 'InventoryOnHand', false);
-
 	
 	npoints = d1.length;
 	for(var i=0; i < npoints; i++){
@@ -86,6 +83,9 @@ $dgProd->display();
 div#resizable,
 div#gbox_products{
   float: left;
+}
+#label_info{
+  color:green;
 }
 </style>
 
