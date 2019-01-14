@@ -12,6 +12,9 @@ $_GET['currentPage'] = 'outgoing';
 include_once('inc/menu.php');
 ?>
 
+<button class="add-new-row">Add New Order</button>
+
+
 <?php
 $dgOrd = new C_DataGrid('SELECT id, OrderDate, ProductId, NumberShipped, First, Last FROM orders', 'id', 'orders');
 $dgOrd->set_sortname('OrderDate', 'DESC');
@@ -21,7 +24,7 @@ $dgOrd->set_col_title('OrderDate', 'Order Date');
 $dgOrd->set_col_title('ProductId', 'Product');
 $dgOrd->set_col_title('NumberShipped', 'Number Shipped');
 
-$dgOrd->set_col_edittype('ProductId', 'select', "select id, ProductLabel from products");
+$dgOrd->set_col_edittype('ProductId', 'autocomplete', "select id, ProductLabel from products");
 
 // $dgOrd->enable_edit('FORM');
 $dgOrd->set_pagesize(100);
@@ -39,18 +42,20 @@ $dgOrd->set_grid_method('setGroupHeaders', array(
                                               'titleText'=>'Customer Name') )));
 
 $dgOrd->enable_autowidth(true);
+$dgOrd->enable_edit('FORM');
+
 $dgOrd->display();
 ?>
 
 Outgoing orders reduce inventory.
 
-
-
-
-<style>
-.number-columns{
-	font-weight: 700 !important;
-}
+<script>
+$(function(){	
+	$(".add-new-row").on("click",function(){
+		$("#add_orders").click();
+	});
+});
+</script>
 
 <?php
 include_once('inc/footer.php');
